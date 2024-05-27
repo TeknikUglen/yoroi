@@ -1,0 +1,8 @@
+<div class="social">
+    <ul>
+        {{ range .Site.Data.social.links }}
+        {{ $imagePathSocial := printf "%simg/social/%s" site.Home.Permalink .icon }}
+            <li><a href="{{ .url }}"><img class="icon" src="{{ $imagePathSocial }}" alt="{{ .name }}"></a></li>
+        {{ end }}
+    </ul>
+</div>

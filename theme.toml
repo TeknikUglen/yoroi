@@ -1,0 +1,26 @@
+name = 'yoroi'
+license = 'ISC'
+licenselink = 'https://github.com/TeknikUglen/yoroi/LICENSE.md'
+description = 'A simple Hugo theme for a Blog'
+
+# The home page of the theme, where the source can be found
+homepage = 'https://github.com/TeknikUglen/yoroi'
+
+# Taxonomy terms
+tags = [
+  'blog', 
+  "light"
+  ]
+
+features = [
+  'blog', 
+  'post category images', 
+  'social-icons'
+  ]
+
+# If the theme has a single author
+[author]
+  name = 'Rene Rasmussen'
+  homepage = 'https://teknikuglen.com'
+
+min_version = '0.126.1'

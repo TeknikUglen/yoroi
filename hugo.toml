@@ -1,0 +1,24 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Yoroi Theme'
+summaryLength = 10
+paginate = 6
+
+
+[[menus.main]]
+name = 'Home'
+pageRef = '/'
+weight = 10
+
+[[menus.main]]
+name = 'Posts'
+pageRef = '/posts'
+weight = 20
+
+[[menus.main]]
+name = 'About'
+pageRef = '/about'
+weight = 30
+
+[params]
+#LogoFile = "img/logo.png"

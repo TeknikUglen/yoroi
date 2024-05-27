@@ -1,0 +1,40 @@
+<div class="article-card-single">
+    {{ $imagePath := printf "%simg/category/placeholderBlue_1024.webp" site.Home.Permalink }}
+    {{ $imageAltText := "placeholder image" }}
+
+    {{ with .Params.categories }}
+        {{ if gt (len .) 0 }}
+            {{ $image := printf "static/img/category/%s_1024.webp" (index . 0) }}
+            {{ if fileExists $image }}
+                {{ $imagePath = printf "%simg/category/%s_1024.webp" site.Home.Permalink (index . 0) }}
+                {{ $imageAltText = printf "%s" (index . 0 ) }}
+            {{ end}}
+        {{ end }}
+    {{ end }}
+
+    <img src="{{ $imagePath }}" alt="{{ $imageAltText }}">
+
+    <div class="card-header">
+        <ul class="card-post-meta">
+            {{ $myDate := "0" }}
+            {{ $myDateFormat := "Monday January 2, 2006" }}
+            {{- with .Params.updated -}} 
+                {{- $myDate = printf "Updated: %s" (. | time.Format $myDateFormat)  -}}
+            {{- else -}}
+                {{- $myDate = printf "Created: %s" (.Params.Date.Format $myDateFormat) -}}
+            {{- end -}}
+            <li>&#x1F4C5; {{ $myDate  }} </li>
+            <li>&#x1F9DD; {{ with .Params.author }} {{ . }} {{ else }} Unknown {{ end }}</li>
+            <li>&#x231A; {{ .ReadingTime }} minutes </li>
+        </ul>
+        <h2>{{ .Title }}</h2>            
+    </div>
+
+    <div class="content">
+            {{ .Content }}
+    </div>
+    <hr>
+    <div class="foot-meta">
+        {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+    </div>
+</div>

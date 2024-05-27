@@ -1,0 +1,15 @@
+{{ define "main" }}
+  <div class="page-content">
+    {{ .Content }}
+  </div>
+
+  <div class="containerHeader">
+    <h2>Recent posts:</h2>
+  </div>
+  
+  <div class="article-container">
+    {{ range first 3 (where .Site.RegularPages "Type" "post").ByDate.Reverse }}
+      {{ partial "articlecard.html" . }}
+    {{ end }}
+  </div>
+{{ end }}

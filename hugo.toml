@@ -4,6 +4,10 @@ title = 'Yoroi Theme'
 summaryLength = 10
 paginate = 6
 
+[params]
+#LogoFile = "img/logo.png"
+dateFormat = "Jan 2, 2006"
+description = "Site Description"
 
 [[menus.main]]
 name = 'Home'
@@ -20,5 +24,7 @@ name = 'About'
 pageRef = '/about'
 weight = 30
 
-[params]
-#LogoFile = "img/logo.png"
+[taxonomies]
+category = "categories"
+tags = "tags"
+

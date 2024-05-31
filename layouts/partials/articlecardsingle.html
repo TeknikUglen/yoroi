@@ -17,11 +17,10 @@
     <div class="card-header">
         <ul class="card-post-meta">
             {{ $myDate := "0" }}
-            {{ $myDateFormat := "Monday January 2, 2006" }}
             {{- with .Params.updated -}} 
-                {{- $myDate = printf "Updated: %s" (. | time.Format $myDateFormat)  -}}
+                {{- $myDate = printf "Updated: %s" (. | time.Format .Site.Params.dateFormat)  -}}
             {{- else -}}
-                {{- $myDate = printf "Created: %s" (.Params.Date.Format $myDateFormat) -}}
+                {{- $myDate = printf "Created: %s" (.Params.Date.Format .Site.Params.dateFormat) -}}
             {{- end -}}
             <li>&#x1F4C5; {{ $myDate  }} </li>
             <li>&#x1F9DD; {{ with .Params.author }} {{ . }} {{ else }} Unknown {{ end }}</li>

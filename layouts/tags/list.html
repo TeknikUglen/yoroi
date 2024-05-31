@@ -1,0 +1,23 @@
+{{ define "main" }} 
+{{ if eq .RelPermalink "/tags/"}} 
+<div class="article-container">
+<div class="tag-page-list">
+{{ range $.Site.Taxonomies.tags.ByCount }}
+  <a href="/tags/{{ .Name }}">
+    <span class="tag">{{ .Name }} <small>({{.Count}})</small></span>
+  </a>
+{{end}}
+</div>
+</div>
+{{ else }}
+{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+
+<div class="article-container">
+  {{ range $paginator.Pages }}
+    {{ partial "partials/articlecard" . }}
+  {{ end }}
+</div>
+
+{{ template "_internal/pagination.html" . }}
+{{end}} 
+{{ end }}

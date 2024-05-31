@@ -8,6 +8,7 @@
   --tagBgClr: var(--bgClrDark);
   --tagBgClrHover: var(--linkHover);
   --tagClr: var(--txtClrLight);
+  --bgClrPaginationBg: #888;
 
   --containerWidth: 1024px;
 }
@@ -110,6 +111,10 @@ main {
   min-width: 300px;
   max-width: 32%;
   box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+}
+.article-card:hover {
+  box-shadow: 0 0 10px var(--bgClrPaginationBg);
 }
 .article-card img,
 .article-card-single img {
@@ -158,6 +163,7 @@ main {
   color: var(--bgClrDark)
 }
 
+
 /* post meta styling (inside card-header) */
 .card-post-meta li {
   list-style-type: none;
@@ -198,7 +204,7 @@ footer p {
 
 
 /* tags styling  */
-.tag-list {
+.tag-list, .tag-page-list {
   padding: 0.5em 0 0.8em 0;
 }
 .tag-inline-list {
@@ -226,7 +232,11 @@ footer p {
 .tag:hover {
   background-color: var(--tagBgClrHover);
 }
-.tag a {
+.tag-page-list {
+  display: flex;
+  gap: 20px;
+}
+.tag-page-list a, .tag a {
   text-decoration: none;
   color: var(--tagClr);
 }
@@ -258,7 +268,7 @@ footer p {
 
 
 /* pagination style */
-.pagination {
+.pagination{
   display: flex;
   justify-content: center;
   gap: 1em;
@@ -271,10 +281,11 @@ footer p {
   text-decoration: none;
 }
 .pagination button {
-  padding: 0.3em 0.5em;
+  padding: 0.3em 1em;
   border-radius: 0.5em;
   background-color: var(--bgClrDark);
   color: var(--txtClrLight);
+  transition: background 0.3s ease;
 }
 .pagination button:hover {
   background-color: var(--linkHover);
@@ -292,3 +303,29 @@ nav.pagination .previous-page {
 nav.pagination .next-page {
   text-align: right;
 }
+.page-item{
+  border: 1px solid var(--borderClr);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: var(--bgClrDark);
+  color: var(--txtClrLight);
+}
+.page-link {
+  color: inherit;
+}
+.page-item:hover {
+  background-color: var(--linkHover);
+}
+.page-item.active:hover{
+  background-color: var(--bgClrPaginationBg);
+}
+.page-item.disabled, .page-item.active {
+  background-color: var(--bgClrPaginationBg);
+  color: var(--borderClr);
+  cursor: not-allowed;
+}
+

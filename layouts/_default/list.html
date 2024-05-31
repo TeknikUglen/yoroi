@@ -7,6 +7,5 @@
     {{ end }}
   </div>
 
-  {{ partial "pagination.html" $paginator }}
-
+  {{ template "_internal/pagination.html" . }}
 {{ end }}

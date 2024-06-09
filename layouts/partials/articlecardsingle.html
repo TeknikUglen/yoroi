@@ -17,8 +17,8 @@
     <div class="card-header">
         <ul class="card-post-meta">
             {{ $myDate := "0" }}
-            {{- with .Params.updated -}} 
-                {{- $myDate = printf "Updated on: %s" (. | time.Format .Site.Params.dateFormat)  -}}
+            {{- if .Lastmod -}} 
+                {{- $myDate = printf "Updated on: %s" (.Lastmod.Format .Site.Params.dateFormat)  -}}
             {{- else -}}
                 {{- $myDate = printf "Created on: %s" (.Params.Date.Format .Site.Params.dateFormat) -}}
             {{- end -}}

@@ -101,7 +101,9 @@ main {
   max-width: var(--containerWidth);
   margin-inline: auto;
 }
-
+.posts-recent {
+  margin-bottom: 0.5em;
+}
 
 /* article card styling */
 .article-card {

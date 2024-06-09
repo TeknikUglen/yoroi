@@ -164,6 +164,10 @@ main {
   margin-bottom: 1em;
   color: var(--bgClrDark)
 }
+.highlight pre {
+  padding: 0.8em 0.5em;
+  margin-bottom: 1em;
+}
 
 
 /* post meta styling (inside card-header) */

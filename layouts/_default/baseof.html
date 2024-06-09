@@ -7,16 +7,15 @@
   <header>     
     {{ partial "header.html" . }}
   </header>
-  <div class="siteTitle">
-    <h1>
-      {{ if .IsHome }}
-        {{ .Site.Title }}
-      {{ else}}
-        {{ .Title }}
-      {{ end }}
-    </h1>
-</div>
+  
   <main>
+    <div class="siteTitle">
+      <h1>
+        {{ if .IsHome }}
+          {{ .Site.Title }}
+        {{ end }}
+      </h1>
+    </div>
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "social" .}}

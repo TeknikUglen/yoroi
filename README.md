@@ -21,6 +21,22 @@ Issues can be reported here on github.
 - Social icons are set in a data file and shown just above the footer. Icons are from the free collection of font-awesome.
 - The category of a post also sets the blog post image. It defaults to a default image if none can be found.
 
+## Screenshots
+
+The screenshots show the default category image in use.
+
+### Home:
+
+![Yoroi Home](./gitimages/yoroi-home.png)
+
+### Posts:
+
+![Yoroi Posts](./gitimages/yoroi-posts.png)
+
+### Single post:
+
+![Yoroi Single post](./gitimages/yoroi-single-post.png)
+
 ## Installation
 
 Place theme files in the themes folder and set `hugo.toml` to use it with 
@@ -32,6 +48,11 @@ theme = 'yoroi'
 The blog post images should be placed in the `static/img/category` folder and have the naming convention: `{category}_500.webp` and `{category}_1024.webp`.
 
 The default images are located in the theme folder structure at the same folder location as described above. They can be used as a reference for the naming scheme.
+
+Image sizes used are:
+
+- 500x286 px
+- 1024x585 px
 
 ## Configuration
 

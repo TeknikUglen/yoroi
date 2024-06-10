@@ -171,6 +171,10 @@ main {
   margin: 1em 0;
   padding: 0 0 0 2.5em;
 }
+.article-card .content li img,
+.article-card-single .content li img {
+  margin-top: 0.5em;
+}
 .highlight pre {
   padding: 0.8em 0.5em;
   margin-bottom: 1em;

@@ -8,6 +8,7 @@ paginate = 6
 #LogoFile = "img/logo.png"
 dateFormat = "Jan 2, 2006"
 description = "Site Description"
+yearStart = ""
 
 [[menus.main]]
 name = 'Home'

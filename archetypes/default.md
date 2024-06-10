@@ -2,7 +2,7 @@
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
 description: ''
 date: {{ .Date }}
-updated: 
+lastmod: 
 author: 
 draft: true
 ---

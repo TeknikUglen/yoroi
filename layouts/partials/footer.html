@@ -1,1 +1,1 @@
-<p>Copyright &copy; {{ now.Year }} {{ .Site.Title }}. | Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> and <a href="https://github.com/TeknikUglen/yoroi" target="_blank">Yoroi</a> theme.</p>
+<p>Copyright &copy; {{- if .Site.Params.yearStart -}} {{- .Site.Params.yearStart -}}- {{- end -}} {{ now.Year }} {{ .Site.Title }}. | Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> and <a href="https://github.com/TeknikUglen/yoroi" target="_blank">Yoroi</a> theme.</p>

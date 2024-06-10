@@ -164,6 +164,13 @@ main {
   margin-bottom: 1em;
   color: var(--bgClrDark)
 }
+.article-card-single .content ul,
+.article-card-single .content ol,
+.article-card .content ul,
+.article-card .content ol {
+  margin: 1em 0;
+  padding: 0 0 0 2.5em;
+}
 .highlight pre {
   padding: 0.8em 0.5em;
   margin-bottom: 1em;

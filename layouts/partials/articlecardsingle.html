@@ -25,8 +25,8 @@
                 {{- $myDate = printf "Created on: %s" (.Params.Date.Format .Site.Params.dateFormat) -}}
             {{- end -}}
             <li {{ if .Params.Lastmod -}}title="{{- $createdDate -}}"{{- end -}}>&#x1F4C5; {{ $myDate  }} </li>
-            <li>&#x1F9DD; {{ with .Params.author }} {{ . }} {{ else }} Unknown {{ end }}</li>
-            <li>&#x231A; {{ .ReadingTime }} minutes </li>
+            <li>&#x1F9DD; Author: {{ with .Params.author }} {{ . }} {{ else }} Unknown {{ end }}</li>
+            <li>&#x231A; Read in: {{ .ReadingTime }} minutes </li>
         </ul>
         <h2>{{ .Title }}</h2>            
     </div>

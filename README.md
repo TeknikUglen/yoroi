@@ -99,6 +99,33 @@ pageRef = '/about'
 weight = 30
 ```
 
+### Author
+
+A default author can be set for all posts using the setting below. An individual author can be set in the frontmatter on each post to define a post author and will overrule the default author.
+
+```toml
+[params]
+author = 'John Doe'
+```
+
+### Date format
+
+This setting will define the date format used in the posts output.
+
+```toml
+[params]
+dateFormat = "Jan 2, 2006"
+```
+
+### Description
+
+A site wide description that will set the meta tag for all pages. Defining a description in the frontmatter of a post will overrule the site wide description.
+
+```toml
+[params]
+description = ''
+```
+
 ### Others
 
 Other settings I use include
@@ -106,10 +133,6 @@ Other settings I use include
 ```toml
 summaryLength = 10
 paginate = 6
-
-[params]
-dateFormat = "Jan 2, 2006"
-description = ''
 ```
 
 I would suggest keeping paginate as a multiplication of 3. e.g. 3, 6, 9 or 12 to keep the grid like layout of the posts.

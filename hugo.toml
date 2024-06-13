@@ -9,6 +9,7 @@ paginate = 6
 dateFormat = "Jan 2, 2006"
 description = "Site Description"
 yearStart = ""
+#author = 'John Doe'
 
 [[menus.main]]
 name = 'Home'

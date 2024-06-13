@@ -118,6 +118,9 @@ main {
 .article-card:hover {
   box-shadow: 0 0 10px var(--bgClrPaginationBg);
 }
+.article-card-click:hover {
+  cursor: pointer;
+}
 .article-card img,
 .article-card-single img {
   width: 100%;
@@ -135,6 +138,9 @@ main {
 .moreLink:hover {
   color: var(--linkHover);
 }
+.article-card .content h2 {
+  margin-top: 0.5em;
+}
 .article-container-single {
   max-width: var(--containerWidth);
   margin-inline: auto;
@@ -151,8 +157,16 @@ main {
 .article-card-single .card-header {
   padding: 1em;
 }
-.article-card-single .card-header h2 {
+.article-card-single .card-header h1 {
   margin-top: 1em;
+}
+.article-card-single .card-header h1::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--bgClrPaginationBg);
+  margin-top: 5px;
 }
 .article-card-single .card-header ul {
   display: flex;
@@ -193,6 +207,13 @@ main {
   margin-bottom: 0.5em;
 }
 .content h2 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+.content h3, 
+.content h4,
+.content h5 {
+  margin-top: 1.3em;
   margin-bottom: 0.5em;
 }
 

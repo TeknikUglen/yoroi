@@ -132,8 +132,14 @@ main {
 }
 .article-card img,
 .article-card-single img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
+}
+.img25 {
+  width: 25% ;
+}
+.img50 {
+  width: 50%;
 }
 .article-card .content {
   padding: 15px;

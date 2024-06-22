@@ -208,8 +208,9 @@ main {
   padding: 0.8em 0.5em;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
+  white-space: pre;
+  overflow: auto;
 }
-
 
 /* post meta styling (inside card-header) */
 .card-post-meta li {

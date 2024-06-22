@@ -136,10 +136,10 @@ main {
   height: auto;
 }
 .img25 {
-  width: 25% ;
+  width: calc(25% - 0.5em);
 }
 .img50 {
-  width: 50%;
+  width: calc(50% - 0.5em);
 }
 .article-card .content {
   padding: 15px;
@@ -458,13 +458,17 @@ error {
     justify-content: center;
     gap: 1.0em;
   }
-
   .footer-content {
     flex-direction: column;
     gap: 10px;
   }
-
   .innerHeader img {
     padding-left: 1em;
+  }
+  .img25 {
+    width: 100%;
+  }
+  .img50 {
+    width: 100%;
   }
 }

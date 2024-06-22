@@ -4,23 +4,28 @@
   {{ partial "head.html" . }}
 </head>
 <body>
+<div>
   <header>     
     {{ partial "header.html" . }}
   </header>
   
   <main>
+    {{ if .IsHome -}}
     <div class="siteTitle">
       <h1>
-        {{ if .IsHome }}
           {{ .Site.Title }}
-        {{ end }}
       </h1>
     </div>
-    {{ block "main" . }}{{ end }}
+    {{- end -}}
+    {{ block "main" . }}{{ end }}    
   </main>
+</div>
+
+<div>
   {{ partial "social" .}}
   <footer>
     {{ partial "footer.html" . }}
   </footer>
+</div>
 </body>
 </html>

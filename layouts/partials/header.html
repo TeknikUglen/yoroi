@@ -1,8 +1,8 @@
 <div class="innerHeader">
-{{ if .Site.Params.LogoFile }}
+{{- if .Site.Params.LogoFile -}}
     <img src="{{ site.Home.Permalink}}{{ .Site.Params.LogoFile }}" alt="{{ site.Title }}">
-{{ else }}
+{{- else -}}
     <img src="{{ site.Home.Permalink }}img/logo.webp" alt="{{ site.Title }}">
-{{ end }}
+{{- end -}}
     {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
 </div>

@@ -2,15 +2,15 @@
     {{ $imagePath := printf "%simg/category/placeholderBlue_1024.webp" site.Home.Permalink }}
     {{ $imageAltText := "placeholder image" }}
 
-    {{ with .Params.categories }}
-        {{ if gt (len .) 0 }}
+    {{- with .Params.categories -}}
+        {{- if gt (len .) 0 -}}
             {{ $image := printf "static/img/category/%s_1024.webp" (index . 0) }}
-            {{ if fileExists $image }}
+            {{- if fileExists $image -}}
                 {{ $imagePath = printf "%simg/category/%s_1024.webp" site.Home.Permalink (index . 0) }}
                 {{ $imageAltText = printf "%s" (index . 0 ) }}
-            {{ end}}
-        {{ end }}
-    {{ end }}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
 
     <img src="{{ $imagePath }}" alt="{{ $imageAltText }}">
 

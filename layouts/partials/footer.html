@@ -1,1 +1,14 @@
-<p>Copyright &copy; {{- if .Site.Params.yearStart -}} {{- .Site.Params.yearStart -}}- {{- end -}} {{ now.Year }} {{ .Site.Title }}. | Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> and <a href="https://github.com/TeknikUglen/yoroi" target="_blank">Yoroi</a> theme.</p>
+<div class="footer-content">
+    <ul class="footer-copyright">
+        <li>Copyright &copy; {{- if .Site.Params.yearStart -}} {{- .Site.Params.yearStart -}}- {{- end -}} {{ now.Year }} {{ .Site.Title }}.</li>
+        <li>Powered by <a href="https://gohugo.io" data-type="URL" data-target="https://gohugo.io" target="_blank" rel="noreferrer noopener" aria-label="Opens in new window" title="Opens in new window">Hugo<span class="ext-link">&#x1F517;</span></a> and <a href="https://github.com/TeknikUglen/yoroi" data-type="URL" data-target="https://github.com/TeknikUglen/yoroi" target="_blank" rel="noreferrer noopener" aria-label="Opens in new window" title="Opens in new window">Yoroi<span class="ext-link" >&#x1F517;</span></a> theme.</li>
+    </ul>
+    <ul>
+    </ul>
+    <ul>
+        {{ range .Site.Data.links.links -}}
+            <li><a href="{{ .url }}" data-type="URL" data-target="{{ .url }}" {{- if strings.HasPrefix .url "http" -}}target="_blank" rel="noreferrer noopener" aria-label="Opens in new window" title="Opens in new window"{{- end -}}>{{ .name }}{{- if strings.HasPrefix .url "http" -}}<span class="ext-link">&#x1F517;</span>{{- end -}}</a></li>
+        {{- end }}
+    </ul>
+
+</div>

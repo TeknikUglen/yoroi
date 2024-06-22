@@ -10,11 +10,11 @@ For a given taxonomy, renders a list of terms assigned to the page.
 {{- $page := .page }}
 {{- $taxonomy := .taxonomy }}
 
-{{- with $page.GetTerms $taxonomy }}
+{{- with $page.GetTerms $taxonomy -}}
   <div class="tag-inline-list">
     <span><img src="{{ printf "%simg/fa-tags.svg" site.Home.Permalink }}"> </span>
       {{- range . }}
         <span class="tag"><a href="{{ .RelPermalink }}">{{.Title}}</a></span>
       {{- end }}
   </div>
-{{- end }}
+{{- end -}}

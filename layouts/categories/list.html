@@ -1,0 +1,28 @@
+{{- define "main" -}} 
+{{- if eq .RelPermalink "/categories/" -}} 
+<div class="siteTitle">
+    <h1>
+        Categories
+    </h1>
+</div>
+<div class="article-container">
+<div class="tag-page-list">
+{{- range $.Site.Taxonomies.categories.ByCount -}}
+    <a href="/categories/{{ .Name }}">
+        <span class="category">{{ .Name }} <small>({{.Count}})</small></span>
+    </a>
+{{- end -}}
+</div>
+</div>
+{{- else -}}
+{{- $paginator := .Paginate (where .Data.Pages "Type" "post") -}}
+
+<div class="article-container">
+    {{- range $paginator.Pages -}}
+    {{ partial "partials/articlecard" . }}
+    {{- end -}}
+</div>
+
+{{ template "_internal/pagination.html" . }}
+{{end}} 
+{{ end }}

@@ -1,0 +1,13 @@
+links:
+  - name: "Super Site 1"
+    url: "https://example.com"
+    description: "My site 1"
+  - name: "Excellent Site 2"
+    url: "https://example.com"
+    description: "My site 2"
+  - name: "Clear Site 3"
+    url: "https://example.com"
+    description: "My site 3"
+  - name: "Internal page"
+    url: "example-page"
+    description: "My site 4"

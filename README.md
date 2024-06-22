@@ -20,10 +20,13 @@ Issues can be reported here on github.
 - Footer is set automatically from the site title and current year. 
 - Setting `yearStart` in the `hugo.toml` file causes a from year to appear in the footer.
 - Social icons are set in a data file and shown just above the footer. Icons are from the free collection of font-awesome.
-- The category of a post also defines the blog post image. It defaults to a default image if no category image can be found. (case sensitive)
+- The category of a post also defines the blog post image. It uses a default image if no category image can be found. (case sensitive)
 - The description field can be used to set the description meta tag of a page. 
 - The front matter description setting can be used to set an individual description for each post.
 - The cards on the front page and posts page are made clickable using javascript to link to individual posts. It falls back on having normal links if javascript is disabled.
+- Links to external sites are located in the right column in the footer. The links are set in a data file.
+- External links are marked with 🔗 in both the footer and the post content and will open in new tab/window.
+- Admonitions can be added using html tags `note`, `warning`, `error`, `success`. Please note the settings need to allow unsafe content. See settings section.
 
 ## Screenshots
 
@@ -125,6 +128,17 @@ A site wide description that will set the meta tag for all pages. Defining a des
 [params]
 description = ''
 ```
+
+### Admonitions
+
+To use the admonitions the settings need to include the following snippet. 
+
+```toml
+[markup.goldmark.renderer]
+unsafe= true
+```
+
+Make sure you understand the implications of enabling this! If you are in control of all content it's not a problem, otherwise it could be used to inject malicious html into your posts. (only before the site is build).
 
 ### Others
 

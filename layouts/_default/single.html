@@ -1,36 +1,36 @@
 {{ define "main" }}
-  {{ if eq .Type "post" }}
+  {{- if eq .Type "post" -}}
     <div class="article-container-single">
       {{ partial "partials/articlecardsingle" . }}
     
       {{/*  previous and next links on posts  */}}
-      {{ if ne .Type "page" }}
+      {{- if ne .Type "page" -}}
       <nav class="pagination">
         <div class="previous-page">
-        {{ if .PrevInSection }}
+        {{- if .PrevInSection -}}
             <a href="{{ .PrevInSection.Permalink }}" title="{{ .PrevInSection.Title }}">
               <button>&larr; {{ .PrevInSection.Title }}</button>
             </a>
-        {{ end }}
+        {{- end -}}
         </div>
     
         <div></div>
     
         <div class="next-page">
-        {{ if .NextInSection }}
+        {{- if .NextInSection -}}
             <a href="{{ .NextInSection.Permalink }}" title="{{ .NextInSection.Title }}">
               <button>{{ .NextInSection.Title }} &rarr;</button>
             </a>
-        {{ end }}
+        {{- end -}}
         </div>
       </nav>
-      {{ end }}
+      {{- end -}}
     </div> 
-  {{ else }}
+  {{- else -}}
     <div class="page-content">
       {{ .Content }}
     </div>
-  {{ end }}
-{{ end }}
+  {{- end -}}
+{{- end -}}
 
 

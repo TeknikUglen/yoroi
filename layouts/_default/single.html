@@ -9,7 +9,7 @@
         <div class="previous-page">
         {{- if .PrevInSection -}}
             <a href="{{ .PrevInSection.Permalink }}" title="{{ .PrevInSection.Title }}">
-              <button>&larr; {{ .PrevInSection.Title }}</button>
+              <button>&#171; {{ .PrevInSection.Title }}</button>
             </a>
         {{- end -}}
         </div>
@@ -19,7 +19,7 @@
         <div class="next-page">
         {{- if .NextInSection -}}
             <a href="{{ .NextInSection.Permalink }}" title="{{ .NextInSection.Title }}">
-              <button>{{ .NextInSection.Title }} &rarr;</button>
+              <button>{{ .NextInSection.Title }} &#187;</button>
             </a>
         {{- end -}}
         </div>

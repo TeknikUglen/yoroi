@@ -3,7 +3,9 @@
   --bgClrDark: #333;
   --txtClrLight: #fff;
   --txtClrHeader: #000;
+  --linkHover: #2C96DE;
   --linkHover: #099627;
+  --linkHoverLight: #CAE5F7;
   --linkHoverLight: #A3D8AE;
   --borderClr: #ddd;
   --tagBgClr: var(--bgClrDark);
@@ -270,6 +272,11 @@ footer p {
   flex-direction: column;
   justify-content: space-between;
 }
+.footer-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
 .ext-link {
   font-size: 0.7em;
   vertical-align: middle;
@@ -301,7 +308,7 @@ footer p {
   font-size: 14px;
   text-decoration: none;
   transition: background-color 0.3s ease;
-  outline: 1px solid green;
+  outline: 1px solid var(--linkHover);
 }
 .tag:hover {
   background-color: var(--tagBgClrHover);
@@ -374,6 +381,13 @@ nav.pagination {
 }
 nav.pagination .previous-page {
   text-align: left;
+}
+nav.pagination .previous-page button,
+nav.pagination .next-page button {
+  border: none;
+  padding: 0.5em 1.2em;
+  vertical-align: middle;
+  outline: 1px solid var(--linkHover);
 }
 nav.pagination .next-page {
   text-align: right;

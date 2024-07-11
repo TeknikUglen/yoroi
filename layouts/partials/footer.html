@@ -1,10 +1,11 @@
 <div class="footer-content">
     <ul class="footer-copyright">
         <li>Copyright &copy; {{- if .Site.Params.yearStart -}} {{- .Site.Params.yearStart -}}- {{- end -}} {{ now.Year }} {{ .Site.Title }}.</li>
+        <li>Site content licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noreferrer noopener" aria-label="Opens in new window" title="Opens in new window">CC BY-NC 4.0<span class="ext-link">&#x1F517;</span></a></li>
         <li>Powered by <a href="https://gohugo.io" data-type="URL" data-target="https://gohugo.io" target="_blank" rel="noreferrer noopener" aria-label="Opens in new window" title="Opens in new window">Hugo<span class="ext-link">&#x1F517;</span></a> and <a href="https://github.com/TeknikUglen/yoroi" data-type="URL" data-target="https://github.com/TeknikUglen/yoroi" target="_blank" rel="noreferrer noopener" aria-label="Opens in new window" title="Opens in new window">Yoroi<span class="ext-link" >&#x1F517;</span></a> theme.</li>
     </ul>
     <ul class="footer-middle">
-        <li>Site content licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noreferrer noopener" aria-label="Opens in new window" title="Opens in new window">CC BY-NC 4.0</a></li>        
+                
     </ul>
     <ul>
         {{ range .Site.Data.links.links -}}

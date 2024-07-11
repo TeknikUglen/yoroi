@@ -1,0 +1,15 @@
+/* Variables */
+:root {
+    --bgClrDark: #333;
+    --txtClrLight: #fff;
+    --txtClrHeader: #000;
+    --linkHover: #099627;
+    --linkHoverLight: #A3D8AE;
+    --borderClr: #ddd;
+    --tagBgClr: var(--bgClrDark);
+    --tagBgClrHover: var(--linkHover);
+    --tagClr: var(--txtClrLight);
+    --bgClrPaginationBg: #888;
+
+    --containerWidth: 1024px;
+}

@@ -297,11 +297,43 @@ footer p {
 }
 .tag-page-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 .tag-page-list a, .tag a {
   text-decoration: none;
   color: var(--tagClr);
+}
+
+/* Category images list */
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+.image-container img {
+  display: block;
+  width: 300px;
+}
+.category-text {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  color: --txtClrLight;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+.category-count {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  color: --txtClrLight;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8px 8px;
+  font-size: 18px;
+  border-radius: 8px;
+
 }
 
 

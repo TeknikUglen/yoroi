@@ -8,9 +8,20 @@
 <div class="article-container">
 <div class="tag-page-list">
 {{- range $.Site.Taxonomies.categories.ByCount -}}
-    <a href="/categories/{{ .Name }}">
-        <span class="category">{{ .Name }} <small>({{.Count}})</small></span>
-    </a>
+    {{ $imagePath := printf "%simg/category/placeholderBlue_500.webp" site.Home.Permalink }}
+    {{ $imageAltText := "placeholder image" }}
+    {{ $image := printf "static/img/category/%s_500.webp" (.Name) }}
+    {{- if fileExists $image -}}
+        {{ $imagePath = printf "%simg/category/%s_500.webp" site.Home.Permalink (.Name) }}
+        {{ $imageAltText = printf "%s" (.Name) }}
+    {{- end -}}
+    <div class="image-container">
+        <a href="/categories/{{ .Name }}">
+            <img src="{{ $imagePath }}" alt="{{ $imageAltText }}">
+            <div class="category-text">{{ .Name | humanize }}</div>
+            <div class="category-count">{{.Count}}</div>
+        </a>
+    </div>
 {{- end -}}
 </div>
 </div>

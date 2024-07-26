@@ -248,6 +248,7 @@ footer p {
 }
 .footer-content li {
   list-style: none;
+  padding-block: 5px;
 }
 .footer-copyright {
   display: flex;
@@ -489,6 +490,9 @@ error {
   .footer-content {
     flex-direction: column;
     gap: 10px;
+  }
+  footer a {
+    font-size: 24px;
   }
   .innerHeader img {
     padding-left: 1em;

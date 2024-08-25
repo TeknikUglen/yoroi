@@ -30,6 +30,12 @@ p {
   margin-bottom: 0.5em;
 }
 
+code {
+  background-color: var(--codeBgClr);
+  padding-inline: 7px;
+  font-size: 1.2em;
+}
+
 
 /* header styling */
 header {

@@ -10,6 +10,7 @@
     --tagBgClrHover: var(--linkHover);
     --tagClr: var(--txtClrLight);
     --bgClrPaginationBg: #888;
+    --codeBgClr: #eee;
 
     --containerWidth: 1024px;
 }

@@ -30,7 +30,7 @@ p {
   margin-bottom: 0.5em;
 }
 
-code {
+p code {
   background-color: var(--codeBgClr);
   padding-inline: 7px;
   font-size: 1.2em;

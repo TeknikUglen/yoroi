@@ -33,6 +33,9 @@ links:
     icon: "fa-github.svg"
   - name: "Gitlab"
     url: "https://gitlab.com"
-    description: "My Gitlab links"
+    description: "My Gitlab link"
     icon: "fa-gitlab.svg"
-    
+  - name: "Printables"
+    url: "https://printables.com"
+    description: "My Printables link"
+    icon: "fa-cube.svg"

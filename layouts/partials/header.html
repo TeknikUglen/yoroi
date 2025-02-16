@@ -1,8 +1,8 @@
 <div class="innerHeader">
 {{- if .Site.Params.LogoFile -}}
-    <img src="{{ site.Home.Permalink}}{{ .Site.Params.LogoFile }}" alt="{{ site.Title }}">
+    <a href="{{ site.Home.Permalink}}"><img src="{{ site.Home.Permalink}}{{ .Site.Params.LogoFile }}" alt="{{ site.Title }}"></a>
 {{- else -}}
-    <img src="{{ site.Home.Permalink }}img/logo.webp" alt="{{ site.Title }}">
+    <a href="{{ site.Home.Permalink}}"><img src="{{ site.Home.Permalink }}img/logo.webp" alt="{{ site.Title }}"></a>
 {{- end -}}
     {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
 </div>

@@ -1,18 +1,15 @@
-{{- with resources.Get "css/variables.css" -}}
-  {{- if eq hugo.Environment "development" -}}
-    <link rel="stylesheet" href="{{ .RelPermalink }}">
-  {{- else -}}
-    {{- with . | minify | fingerprint -}}
+{{ $styles := slice
+  (resources.Get "css/variables.css")
+  (resources.Get "css/main.css")
+}}
+
+{{ range $style := $styles }}
+  {{ if hugo.IsProduction }}
+    {{ with $style | minify | fingerprint }}
+      <link rel="preload" as="style" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
       <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-    {{- end -}}
-  {{- end -}}
-{{- end }}
-{{ with resources.Get "css/main.css" -}}
-  {{- if eq hugo.Environment "development" -}}
-    <link rel="stylesheet" href="{{ .RelPermalink }}">
-  {{- else -}}
-    {{- with . | minify | fingerprint -}}
-      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
+    {{ end }}
+  {{ else }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  {{ end }}
+{{ end }}

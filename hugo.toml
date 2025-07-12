@@ -2,7 +2,9 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'Yoroi Theme'
 summaryLength = 10
-paginate = 6
+
+[pagination]
+pagerSize = 6
 
 [params]
 #LogoFile = "img/logo.png"

@@ -10,6 +10,8 @@ I have used this as a learning experience to get deeper into Hugo. It may still 
 
 Issues can be reported here on github.
 
+Tested with Hugo v0.129.0 and v0.148.1, so I would guess version between those are OK too.
+
 ## Features
 
 - Home page with three latest posts as cards. Extra content can be added using the `_index.md` file in your content folder.
@@ -146,7 +148,8 @@ Other settings I use include
 
 ```toml
 summaryLength = 10
-paginate = 6
+[pagination]
+pagerSize = 6
 ```
 
 I would suggest keeping paginate as a multiplication of 3. e.g. 3, 6, 9 or 12 to keep the grid like layout of the posts.

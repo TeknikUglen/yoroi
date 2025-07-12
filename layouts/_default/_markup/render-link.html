@@ -1,1 +1,24 @@
-<a href="{{ .Destination | safeURL }}" data-type="URL" data-target="{{ .Destination | safeURL }}" {{ with .Title}} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank" rel="noopener" aria-label="Opens in new window" title="Opens in new window" {{ end }}>{{ .Text | safeHTML }}{{ if strings.HasPrefix .Destination "http" }}<span class="ext-link">&#x1F517;</span>{{ end -}}</a>
+{{- $href := .Destination | safeURL -}}
+{{- $title := .Title | htmlEscape -}}
+{{- $isExternal := or
+    (strings.HasPrefix $href "http://")
+    (strings.HasPrefix $href "https://")
+    (strings.HasPrefix $href "//")
+-}}
+
+<a href="{{ $href }}"
+   data-type="URL"
+   data-target="{{ $href }}"
+   {{- if $isExternal -}}
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Opens in new window"
+     {{- if not .Title }} title="Opens in new window"{{ end }}
+   {{- else -}}
+     {{- if .Title }} title="{{ $title }}"{{ end }}
+   {{- end -}}>
+   {{ .Text | safeHTML }}
+   {{- if $isExternal }}
+     <span class="ext-link" aria-hidden="true">&#x1F517;</span>
+   {{- end -}}
+</a>

@@ -9,20 +9,31 @@ function setupEventListeners() {
     const clickableCards = document.querySelectorAll('.article-card');
 
     // add the listener to the cards
-    clickableCards.forEach(element => {
-        element.classList.add('article-card-click')
-        element.addEventListener('click', clickCard);
+    clickableCards.forEach(card => {
+        card.classList.add('article-card-click')
+        card.addEventListener('click', clickCard);
+        card.addEventListener('keydown', handleCardKeydown);
     });
 }
 
 // function for linking the card to the single post
 function clickCard(event) {
     // get the data-url value
-    const url = this.getAttribute('data-url');
+    const url = event.currentTarget.getAttribute('data-url');
     
     // navigate to url
     if (url) {
         window.location.href = url;
+    }
+}
+
+function handleCardKeydown(event) {
+    const card = event.currentTarget;
+    if (event.key === 'Enter' || event.key === ' ') {
+        const url = card.getAttribute('data-url');
+        if (url) {
+            window.location.href = url;
+        }
     }
 }
 

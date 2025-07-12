@@ -1,12 +1,11 @@
-{{- with resources.Get "js/main.js" -}}
-  {{- if eq hugo.Environment "development" -}}
-    {{- with . | js.Build -}}
-      <script src="{{ .RelPermalink }}" defer></script>
-    {{- end -}}
-  {{- else -}}
-    {{- $opts := dict "minify" true }}
-    {{- with . | js.Build $opts | fingerprint -}}
-      <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
+{{ $js := resources.Get "js/main.js" }}
+{{ if hugo.IsProduction }}
+  {{ $opts := dict "minify" true }}
+  {{ with $js | js.Build $opts | fingerprint }}
+    <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
+  {{ end }}
+{{ else }}
+  {{ with $js | js.Build }}
+    <script src="{{ .RelPermalink }}" defer></script>
+  {{ end }}
+{{ end }}

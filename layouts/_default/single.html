@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{- if eq .Type "post" -}}
     <div class="article-container-single">
-      {{ partial "partials/articlecardsingle" . }}
+      {{ partial "articlecardsingle" . }}
     
       {{/*  previous and next links on posts  */}}
       {{- if ne .Type "page" -}}

@@ -1,5 +1,8 @@
 # Yoroi
 
+> [!Warning]
+> Moved to codeberg [https://codeberg.org/TeknikUglen/yoroi](https://codeberg.org/TeknikUglen/yoroi)
+
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/isc)
 [![Font Awesome](https://img.shields.io/badge/Icons-Font%20Awesome%20Free-red)](https://fontawesome.com/)
 [![Hugo](https://img.shields.io/badge/Static%20Site%20Builder-Hugo-green)](https://gohugo.io)
